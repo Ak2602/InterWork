@@ -1,28 +1,17 @@
-<!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Registration Example</title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
-
 <body>
-  <h1>Register</h1>
-  <p>Welcome to Form></p>
-  <center>
-    <% if (messages.success) { %>
-      <p class="alert"><%- messages.success %></p>
-      <% } %>
-  </center>
-  <form action="Auth" method="post">
-    <div class="Container">
-      <label for="username" class="fl fontLabel">Username: </label>
-      <input type="text" required name="username" id="username" placeholder="Username" class="textBox">
-      <label for="password" class="fl fontLabel"> Password: </label>
-      <input type="password" required name="password" id="password" placeholder="Password" class="textBox">
-      <button type="submit">SUBMIT</button>
-    </div>
-  </form>
+  <div>
+    <center>
+      <h1>Welcome To the Server..</h1>
+      <h2><a href="/register">Register</a></h2>
+      <h2><a href="/login">login</a></h2>
+    </center>
+  </div>
 </body>
-
 </html>
