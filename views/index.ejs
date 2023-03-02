@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Registration Example</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>Register</h1>
+  <p>Welcome to Form></p>
+  <center>
+    <% if (messages.success) { %>
+      <p class="alert"><%- messages.success %></p>
+      <% } %>
+  </center>
+  <form action="Auth" method="post">
+    <div class="Container">
+      <label for="username" class="fl fontLabel">Username: </label>
+      <input type="text" required name="username" id="username" placeholder="Username" class="textBox">
+      <label for="password" class="fl fontLabel"> Password: </label>
+      <input type="password" required name="password" id="password" placeholder="Password" class="textBox">
+      <button type="submit">SUBMIT</button>
+    </div>
+  </form>
+</body>
+
+</html>
