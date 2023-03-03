@@ -13,6 +13,9 @@
     <% if (messages.success) { %>
       <p class="alert"><%- messages.success %></p>
       <% } %>
+    <% if (messages.warn) { %>
+      <p class="alert"><%- messages.warn %></p>
+      <% } %>
   </center>
   <form action="Auth" method="post">
     <div class="Container">

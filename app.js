@@ -60,7 +60,8 @@ app.post('/save', (function (req, res, next) {
   let qry = (`INSERT INTO details (name, password) VALUES ("${user}", "${pass}")`);
   con.query(qry, function (err, result) {
     if (err) {
-      console.log("User Not Registered");
+      req.flash('warn', 'Failed to register!!');
+      res.redirect('/register');
     } else {
       console.log("record Updated");
       req.flash('success', 'User Added Successfully');
@@ -77,22 +78,18 @@ app.post('/auth', (function (req, res, next) {
     con.query(compareQry, function (err, rows, fields) {
       if (err) throw err; 
       if(rows.length<= 0){
-        console.log("false");
-        res.redirect("/");
+        req.flash('warn', 'Invalid Credentials!!!')
+        res.redirect("/login");
       }else {
         console.log("true");
         req.session.loggedin = true;
         req.session.name = name;
         req.flash('success', 'Login Successfull')
         res.redirect('/login');
-        // console.log("record Updated");
-        // req.flash('success', 'User Added Successfully');
-        // res.redirect('/');
-        
       }
     });
   }else{
-    res.send("Enter Credentials !!!");
+    req.flash('warn', 'Enter Details');
   }
 }));
 
