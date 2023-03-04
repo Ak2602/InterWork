@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+
+<head>
+  <title>Registration Example</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>Admin</h1>
+  <p>Dashboard></p>
+  <center>
+    <% if (messages.success) { %>
+      <p class="alert"><%- messages.success %></p>
+      <% } %>
+    <% if (messages.warn) { %>
+        <p class="alert"><%- messages.warn %></p>
+      <% } %>
+  </center>
+  <form action="update" method="post">
+    <div class="Container">
+      <label for="username" class="fl fontLabel">Username: </label>
+      <input type="text" required name="n_ame" id="n_ame" placeholder="Username" class="textBox">
+      <label for="password" class="fl fontLabel"> Password: </label>
+      <input type="password" required name="p_ass" id="p_ass" placeholder="Password" class="textBox">
+      <button type="submit">Update</button>
+    </div>
+  </form>
+</body>
+
+</html>
+</body>
+</html>
