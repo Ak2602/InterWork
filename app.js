@@ -8,8 +8,13 @@ import bodyParser from 'body-parser'; // to collect the data from user
 import flash from "express-flash"; //to show the popup message
 import { fileURLToPath } from 'url';
 
-import router from './src/routes/Router.js';
+//import routers..
 
+import regRouter from './src/routes/regRouter.js';
+import logRouter from './src/routes/logRouter.js';
+import admRouter from './src/routes/admRouter.js';
+
+//declarations
 
 const app = express();
 const port = process.env.port || 3000;
@@ -37,9 +42,13 @@ app.use(flash());
 
 /* USING ROUTERS*/
 
-app.use('/', router);
-app.use('/register', router);
-app.use('login', router);
+app.get('/', (req, res)=>{
+  res.render('index');
+})
+app.use('/', regRouter);
+app.use('/', logRouter);
+app.use('/', admRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

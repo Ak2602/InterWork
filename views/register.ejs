@@ -13,16 +13,23 @@
     <% if (messages.success) { %>
       <p class="alert"><%- messages.success %></p>
       <% } %>
-    <% if (messages.warn) { %>
-        <p class="alert"><%- messages.warn %></p>
-      <% } %>
+        <% if (messages.warn) { %>
+          <p class="alert"><%- messages.warn %></p>
+          <% } %>
   </center>
   <form action="save" method="post">
     <div class="Container">
       <label for="username" class="fl fontLabel">Username: </label>
-      <input type="text" required name="username" id="username" placeholder="Username" class="textBox">
+      <input type="text" required name="username" id="username" placeholder="Username"
+        value="<%=(typeof inputData!='undefined')? inputData.username:''%>" class="textBox">
+      <p style="color: red;">
+        <%=(typeof errors!='undefined' && typeof errors.username!='undefined' )? errors.username.msg:''%>
+      </p>
       <label for="password" class="fl fontLabel"> Password: </label>
       <input type="password" required name="password" id="password" placeholder="Password" class="textBox">
+      <p style="color: red;">
+        <%=(typeof errors!='undefined' && typeof errors.password!='undefined' )? errors.password.msg:''%>
+      </p>
       <button type="submit">SUBMIT</button>
     </div>
   </form>
